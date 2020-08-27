@@ -1,3 +1,5 @@
+import os
+
 import numpy as np
 
 
@@ -118,9 +120,9 @@ def save_data_as_csv(data, path):
 
 
 # MAIN
-collected_data = collect_csv_data_collection_from_directory("/home/sale/PycharmProjects/untitled/Collected_data")
+collected_data = collect_csv_data_collection_from_directory("../collected_data")
 filtered_data = filter_collected_data(collected_data)
 
 for i in range(0, len(filtered_data)):
     save_data_as_csv(filtered_data[i],
-                     "/home/sale/PycharmProjects/untitled/Filtered_colected_data/" + str(i))
+                     "../filtered_colected_data/" + str(i))

@@ -39,7 +39,8 @@ class MeanShiftStringEdition:
             centroid = centroids[i]
             in_bandwith = self.fill_in_bandiwth_with_features_in_radius(centroid, data)
             new_centroid = self.find_average(in_bandwith)
-            new_centroids.append(new_centroid)
+            if len(new_centroid) != 0:
+                new_centroids.append(new_centroid)
         return new_centroids
 
     def find_average(self, in_bandwith):

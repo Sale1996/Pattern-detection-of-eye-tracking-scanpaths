@@ -60,7 +60,7 @@ def needleman_wunsch_with_penalty(x, y):
             for j in range(1, n + 1):
                 # i je row , j je column
                 # take MIN of: align, delete, insert
-                OPT[i][j] = min(OPT[i - 1][j - 1] + delta(x, y, i - 1, j - 1) + extraPenaltyChange(x, y, i - 1, j - 1),
+                OPT[i][j] = min(OPT[i - 1][j - 1] + extraPenaltyChange(x, y, i - 1, j - 1),
                                 OPT[i - 1][j] + 1 + extraPenaltyDeleteInsert(y, j - 1),
                                 OPT[i][j - 1] + 1 + extraPenaltyDeleteInsert(x, i - 1))
 
@@ -107,7 +107,26 @@ def extraPenaltyChange(x, y, i, j):
         'FH': 2,
         'GG': 0,
         'GH': 0.5,
-        'HH': 0
+        'HH': 0,
+        'KK': 0,
+        'KA': 2,
+        'KB': 2.5,
+        'KC': 2,
+        'KD': 2.5,
+        'KE': 2,
+        'KF': 2.5,
+        'KG': 2,
+        'KH': 2.5,
+        'KL': 0.5,
+        'LL': 0,
+        'LA': 2.5,
+        'LB': 2,
+        'LC': 2.5,
+        'LD': 2,
+        'LE': 2.5,
+        'LF': 2,
+        'LG': 2.5,
+        'LH': 2,
     }
 
     if x[i] != y[j]:

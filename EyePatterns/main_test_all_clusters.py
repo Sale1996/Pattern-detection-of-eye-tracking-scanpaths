@@ -6,6 +6,7 @@ from clustering_algorithms.custom_k_means import KMeans
 from clustering_algorithms.custom_mean_shift import MeanShift
 from clustering_algorithms.custom_mean_shift_string_edition import MeanShiftStringEdition
 from clustering_algorithms.dbscan import DbScan
+from prepare_data.format_sequences import format_sequences_from_student
 from utils.e_mine import e_mine_find_common_scanpath
 from utils.string_compare_algorithm import levenstein_sequence_similarity, is_string_similar, needleman_wunsch, \
     needleman_wunsch_with_penalty
@@ -46,8 +47,10 @@ import numpy as np
 #     plt.show()
 
 
-def initialize_string_sequences():
-    return ["ACCAEF", "ACCEF", "AACF", "CCCEF", "CCAACCF", "CCACF"]
+def initialize_string_sequences(student_name):
+    # print(format_sequences_from_student(student_name))
+    return format_sequences_from_student(student_name)
+    # return ["ACCAEF", "ACCEF", "AACF", "CCCEF", "CCAACCF", "CCACF"]
 
 
 def print_description():
@@ -209,8 +212,8 @@ def print_db_scan_results(db_scan, distance_algorithm):
 '''
     2# Initialize string collection and print description on printed form
 '''
-
-string_data = initialize_string_sequences()
+student_name = "student_1"
+string_data = initialize_string_sequences(student_name)
 print_description()
 
 '''
